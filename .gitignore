@@ -1,0 +1,5 @@
+# files to be ignored 
+*.txt
+
+# folder to be ignored
+./folder_to_be_ignored

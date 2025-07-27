@@ -3,6 +3,7 @@ from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 
 # Load the Iris dataset
 iris = datasets.load_iris()
@@ -27,3 +28,15 @@ accuracy = accuracy_score(y_test, y_pred)
 # Print the accuracy
 print ('Accuracy: ', accuracy*100)
 
+# Calculate confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+
+# Print the full confusion matrix
+print('\nConfusion Matrix:')
+print(cm)
+
+# Print individual elements of confusion matrix
+print('\nIndividual Elements:')
+print(f'True Positives (Class 0): {cm[0,0]}')
+print(f'True Positives (Class 1): {cm[1,1]}')
+print(f'True Positives (Class 2): {cm[2,2]}')
